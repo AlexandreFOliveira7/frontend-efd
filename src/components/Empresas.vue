@@ -49,7 +49,7 @@
         </v-col>
       </v-row>
       <v-row class="mt-10">
-        <v-col class="d-flex justify-center justify-md-start" cols="12" md="6">
+        <v-col class="d-flex justify-center justify-sm-start" cols="12" md="6">
             <p class="font-weight-bold  text-h6 text-xl-h5 ml-4">Empresas</p>                   
         </v-col>
         <v-col class="d-flex justify-end" cols="12" md="6">
@@ -93,10 +93,28 @@
             <v-col class="text-center">
               <p class="text-marromPrincipal font-weight-bold"><span class="text-marromPrincipal font-weight-bold bg-marromSecundario py-1 px-2 rounded-xl">Empresárial</span></p>
             </v-col>
-            <v-col class="text-center">
+            <v-col class="text-center d-flex flex-column align-center">
               <v-icon>
                 mdi-dots-horizontal
               </v-icon>
+              <div class="position-fixed-acoes bg-branco elevation-5 rounded px-5 py-3">
+                <div class="d-flex align-center mb-1">
+                  <v-icon class="mr-2">mdi-exit-to-app</v-icon>
+                  <p>Logar</p>
+                </div>
+                <div class="d-flex align-center mb-1">
+                  <v-icon class="mr-2">mdi-magnify</v-icon>
+                  <p>Gerenciar Licenças</p>
+                </div>
+                <div class="d-flex align-center mb-1">
+                  <v-icon class="mr-2">mdi-account</v-icon>
+                  <p>Gerenciar Usuários</p>
+                </div>
+                <div class="d-flex align-center mb-1">
+                  <v-icon class="mr-2">mdi-pencil</v-icon>
+                  <p>Editar Empresa</p>
+                </div>
+              </div>
             </v-col>
           </v-row>
           <v-row class="border-b bg-branco tr-linha">
@@ -120,9 +138,9 @@
 
       <!-- Modais -->
 
-      <!-- modal verificar disponibilidade -->
+      <!-- modal ativar licença  -->
       <v-dialog v-model="modalAtivacaoLicenca" max-width="800px">
-        <v-container class="bg-branco px-10">
+        <v-container class="bg-branco px-10 overflow-y-auto">
           <v-row class="border-b">
             <v-col class="d-flex justify-start" cols="10">
               <p class="font-weight-bold text-marromPrincipal text-h6 text-md-xl-h5">Ativar Licença Para Empresa</p>
@@ -194,15 +212,23 @@
 
           </v-row>
           <v-row>
-            <v-col class="d-flex justify-end">
-              <v-btn class="bg-marromPrincipal mr-2 rounded-xl">Cancelar</v-btn>
-              <v-btn class="bg-laranja rounded-xl">Cadastrar</v-btn>
+            <v-col class="mb-n6 mb-md-0" cols="12" md="3">
+              <v-btn class="bg-laranja mr-2 rounded-xl" block>Q&A</v-btn>
+            </v-col>
+            <v-col cols="0" md="3">
+
+            </v-col>
+            <v-col cols="12" md="3">
+              <v-btn class="bg-rosa mr-2 rounded-xl" block>Cancelar</v-btn>
+            </v-col>
+            <v-col cols="12" md="3">
+              <v-btn class="bg-marromPrincipal rounded-xl" block>Cadastrar</v-btn>
             </v-col>
           </v-row>
         </v-container>
     </v-dialog>
 
-    <!-- modal ativação licença -->
+    <!-- modal verificar disponibilidade licença -->
     <v-dialog v-model="modalVerificarDisponibilidade" max-width="800px">
         <v-container class="bg-branco px-10">
           <v-row class="border-b">
@@ -341,6 +367,12 @@
 
   .position-absolute {
     position: absolute;
+  }
+
+  .position-fixed-acoes {
+    position: absolute;
+    margin-top: 20px;
+    z-index: 1000;
   }
 
   .modal-fechar:hover {
